@@ -31,15 +31,7 @@ python3 -m pip install --upgrade pip
 python3 -m pip install psutil
 
 # ===========================
-# Step 4: Start server (TCP) in background
+# Step 4: Start server
 # ===========================
-echo "[*] Starting TCP log server..."
-nohup python3 server.py > server.log 2>&1 &
-
-# ===========================
-# Step 5: Start HTTP server to share IP
-# ===========================
-echo "[*] Starting HTTP server on port 8000 to share IP..."
-nohup python3 -m http.server 8000 > http_server.log 2>&1 &
-
-echo "[+] HTTP server running. Clients can get IP from: http://$IP:8000/server_ip.txt"
+echo "[*] Starting server program..."
+python3 server.py
